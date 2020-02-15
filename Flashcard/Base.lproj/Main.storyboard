@@ -19,42 +19,90 @@
                                 <rect key="frame" x="72" y="210" width="270" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Addis Ababa" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xNg-0Y-HFw">
-                                        <rect key="frame" x="0.0" y="0.0" width="270" height="100"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What is the capital of Ethiopia?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jPi-ZE-GcN">
-                                        <rect key="frame" x="0.0" y="0.0" width="270" height="100"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What is the capital of Ethiopia?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jPi-ZE-GcN">
+                                        <rect key="frame" x="0.0" y="-53" width="270" height="260"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Addis Ababa" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xNg-0Y-HFw">
+                                        <rect key="frame" x="0.0" y="-53" width="270" height="260"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="AsT-RH-1Kf" appends="YES" id="ubD-fj-2Iu"/>
+                                </connections>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HWB-t2-TFQ">
+                                <rect key="frame" x="72" y="606" width="270" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <state key="normal" title="Addis Ababa"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="88B-S0-QNK" appends="YES" id="mLs-Vg-wCa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mzN-lH-fLp">
+                                <rect key="frame" x="72" y="690" width="270" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <state key="normal" title="Bahir Dar"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="wiu-WV-x9b" appends="YES" id="UR7-F3-Cig"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GMU-ND-jdE">
+                                <rect key="frame" x="72" y="524" width="270" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <state key="normal" title="Dire Dawa"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="eFL-SN-BgA" appends="YES" id="bjN-6E-gpJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="tintColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="AsT-RH-1Kf" appends="YES" id="ExH-f3-8Xy"/>
-                        </connections>
                     </view>
                     <connections>
                         <outlet property="AnswerLabel" destination="xNg-0Y-HFw" id="KVR-ru-tsi"/>
                         <outlet property="QuestionLabel" destination="jPi-ZE-GcN" id="5Pg-IH-QOj"/>
+                        <outlet property="btnOptionOne" destination="GMU-ND-jdE" id="zWv-hi-EV9"/>
+                        <outlet property="btnOptionThree" destination="mzN-lH-fLp" id="yCh-hn-HWk"/>
+                        <outlet property="btnOptionTwo" destination="HWB-t2-TFQ" id="Ne1-Xx-JvS"/>
+                        <outlet property="card" destination="0jF-WA-GXB" id="Ax9-bA-J63"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="88B-S0-QNK">
+                    <connections>
+                        <action selector="didTapOptionTwo:" destination="BYZ-38-t0r" id="r6u-7E-sQ8"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="wiu-WV-x9b">
+                    <connections>
+                        <action selector="didTapOptionThree:" destination="BYZ-38-t0r" id="4eQ-Yk-Fhz"/>
+                    </connections>
+                </tapGestureRecognizer>
                 <tapGestureRecognizer id="AsT-RH-1Kf">
                     <connections>
                         <action selector="didTapOnFlashcard:" destination="BYZ-38-t0r" id="y4c-gC-Lpj"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="eFL-SN-BgA">
+                    <connections>
+                        <action selector="didTapOptionOne:" destination="BYZ-38-t0r" id="Xy0-sc-28F"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
