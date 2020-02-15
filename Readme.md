@@ -11,7 +11,7 @@ This app opens with a question on a question card and when the question card is 
 ### App Walk-though
 `TODO://` Add the URL to your animated app walk-though `gif` in the image tag below. Make sure the gif actually renders and animates when viewing this README. (☝️ Remove this paragraph after after adding gif)
 
-<img src="https://gph.is/g/Zk683kd" width=200><br>
+<img src="https://giphy.com/gifs/ZcXBJZR7SM0RQ9yh5x/html5" width=200><br>
 <iframe src="https://giphy.com/embed/ZcXBJZR7SM0RQ9yh5x" width="239" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/ZcXBJZR7SM0RQ9yh5x">via GIPHY</a></p>
 
 ## Required
