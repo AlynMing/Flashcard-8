@@ -11,7 +11,6 @@ This app opens with a question on a question card and when the question card is 
 ### App Walk-though
 `TODO://` Add the URL to your animated app walk-though `gif` in the image tag below. Make sure the gif actually renders and animates when viewing this README. (☝️ Remove this paragraph after after adding gif)
 
-![](Flashcard.gif)
 <img src="https://media.giphy.com/media/ZcXBJZR7SM0RQ9yh5x/giphy.gif" width=200><br>
 
 ## Required
