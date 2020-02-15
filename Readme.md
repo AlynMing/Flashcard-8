@@ -12,6 +12,7 @@ This app opens with a question on a question card and when the question card is 
 `TODO://` Add the URL to your animated app walk-though `gif` in the image tag below. Make sure the gif actually renders and animates when viewing this README. (☝️ Remove this paragraph after after adding gif)
 
 <img src="https://gph.is/g/Zk683kd" width=200><br>
+<iframe src="https://giphy.com/embed/ZcXBJZR7SM0RQ9yh5x" width="239" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/ZcXBJZR7SM0RQ9yh5x">via GIPHY</a></p>
 
 ## Required
 - [x] Create New Project in Xcode
@@ -21,5 +22,5 @@ This app opens with a question on a question card and when the question card is 
 - [x] Push code to GitHub
 ## Optional
 - [x] Toggle the flashcard between the question side and the answer side
-- [ ] Style the question and answer side of the card to better distinguish between the two sides
-- [ ] Add selectable multiple choice answers beneath the card
+- [x] Style the question and answer side of the card to better distinguish between the two sides
+- [x] Add selectable multiple choice answers beneath the card
