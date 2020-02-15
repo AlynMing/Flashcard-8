@@ -12,9 +12,7 @@ This app opens with a question on a question card and when the question card is 
 `TODO://` Add the URL to your animated app walk-though `gif` in the image tag below. Make sure the gif actually renders and animates when viewing this README. (☝️ Remove this paragraph after after adding gif)
 
 ![](Flashcard.gif)
-<img src="https://giphy.com/gifs/ZcXBJZR7SM0RQ9yh5x/html5" width=200><br>
-
-<div style="width:100%;height:0;padding-bottom:201%;position:relative;"><iframe src="https://giphy.com/embed/ZcXBJZR7SM0RQ9yh5x" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/ZcXBJZR7SM0RQ9yh5x">via GIPHY</a></p>
+<img src="https://media.giphy.com/media/ZcXBJZR7SM0RQ9yh5x/giphy.gif" width=200><br>
 
 ## Required
 - [x] Create New Project in Xcode
