@@ -59,17 +59,79 @@ class ViewController: UIViewController {
         }
     }
     
+    func updateFlashcard(question: String, answer: String, extraAnswerOne: String?, extraAnswerTwo: String?) {
+        QuestionLabel.text = question;
+        AnswerLabel.text = answer;
+        
+        // randomly assign answer to choice
+        let r = Int.random(in: 1 ... 3)
+        switch r {
+        case 1:
+            btnOptionOne.setTitle(answer, for: .normal)
+            btnOptionTwo.setTitle(extraAnswerOne, for: .normal)
+            btnOptionThree.setTitle(extraAnswerTwo, for: .normal)
+            
+        case 2:
+            btnOptionOne.setTitle(extraAnswerOne, for: .normal)
+            btnOptionTwo.setTitle(answer, for: .normal)
+            btnOptionThree.setTitle(extraAnswerTwo, for: .normal)
+            
+        case 3:
+            btnOptionOne.setTitle(extraAnswerTwo, for: .normal)
+            btnOptionTwo.setTitle(extraAnswerOne, for: .normal)
+            btnOptionThree.setTitle(answer, for: .normal)
+            
+        default:
+            btnOptionOne.setTitle("Random Not Working", for: .normal)
+            btnOptionTwo.setTitle("Random Not Working", for: .normal)
+            btnOptionThree.setTitle("Random Not Working", for: .normal)
+        }
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let navigationController = segue.destination as! UINavigationController
+        
+        let creationController = navigationController.topViewController as! CreationViewController
+        
+        creationController.flashcardController = self
+        
+        if(segue.identifier == "EditSegue") {
+            creationController.initialQuestion = QuestionLabel.text
+            creationController.initialAnswer = AnswerLabel.text
+            
+            creationController.initialExtraOne = btnOptionOne.currentTitle
+            creationController.initialExtraTwo = btnOptionTwo.currentTitle
+            creationController.initialExtraThree = btnOptionThree.currentTitle
+        }
+    }
+    
     @IBAction func didTapOptionOne(_ sender: Any) {
-        btnOptionOne.isHidden = true;
+        if btnOptionOne.currentTitle == AnswerLabel!.text {
+            AnswerLabel.isHidden = false;
+            QuestionLabel.isHidden = true;
+        } else {
+            btnOptionOne.isHidden = true;
+        }
     }
     
     @IBAction func didTapOptionTwo(_ sender: Any) {
-        AnswerLabel.isHidden = false;
-        QuestionLabel.isHidden = true;
+        if btnOptionTwo.currentTitle == AnswerLabel!.text {
+            AnswerLabel.isHidden = false;
+            QuestionLabel.isHidden = true;
+        } else {
+            btnOptionTwo.isHidden = true;
+        }
     }
     
     @IBAction func didTapOptionThree(_ sender: Any) {
-        btnOptionThree.isHidden = true;
+        if btnOptionThree.currentTitle == AnswerLabel!.text {
+            AnswerLabel.isHidden = false;
+            QuestionLabel.isHidden = true;
+        } else {
+            btnOptionThree.isHidden = true;
+        }
     }
+    
 }
 
