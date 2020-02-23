@@ -6,9 +6,8 @@
 The Flashcard app added functionalities to edit existing question and answers and creating a new question from scratch on a separate screen.
 
 ### App Walk-though
-`TODO://` Add the URL to your animated app walk-though `gif` in the image tag below. Make sure the gif actually renders and animates when viewing this README. (☝️ Remove this paragraph after after adding gif)
 
-<img src="YOUR_GIF_URL_HERE" width=200><br>
+<img src="https://media.giphy.com/media/Uu0FFZdSrj4b4YV4XW/giphy.gif" width=200><br>
 
 ## Required
 - [x] User can open the creation screen
