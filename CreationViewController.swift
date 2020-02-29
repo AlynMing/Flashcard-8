@@ -12,11 +12,10 @@ class CreationViewController: UIViewController {
     
     var flashcardController: ViewController!
     
-    @IBOutlet weak var qTextField: UITextField!
-    @IBOutlet weak var aTextField: UITextField!
-    @IBOutlet weak var choiceOne: UITextField!
-    @IBOutlet weak var choiceTwo: UITextField!
-    @IBOutlet weak var choiceThree: UITextField!
+    @IBOutlet weak var questionTextField: UITextField!
+    @IBOutlet weak var answerTextField: UITextField!
+    @IBOutlet weak var extraChoiceOne: UITextField!
+    @IBOutlet weak var extraChoiceTwo: UITextField!
     
     var initialQuestion: String?
     var initialAnswer: String?
@@ -28,12 +27,11 @@ class CreationViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        qTextField.text = initialQuestion
-        aTextField.text = initialAnswer
+        questionTextField.text = initialQuestion
+        answerTextField.text = initialAnswer
         
-        choiceOne.text = initialExtraOne
-        choiceTwo.text = initialExtraTwo
-        choiceThree.text = initialExtraThree
+        extraChoiceOne.text = initialExtraOne
+        extraChoiceTwo.text = initialExtraTwo
     }
     
     @IBAction func didTapOnCancel(_ sender: Any) {
@@ -41,21 +39,21 @@ class CreationViewController: UIViewController {
     }
     
     @IBAction func didTapOnDone(_ sender: Any) {
-        let qText = qTextField.text
-        let aText = aTextField.text
+        let questionText = questionTextField.text
+        let answerText = answerTextField.text
         
-        let extraOne = choiceOne.text
-        let extraTwo = choiceTwo.text
+        let extraOne = extraChoiceOne.text
+        let extraTwo = extraChoiceTwo.text
         //let extraThree = choiceThree.text
         
-        if (qText == "" || aText == "") {
+        if (questionText == "" || answerText == "") {
             let alert = UIAlertController(title: "Missing text", message: "You need to enter both a question and an answer", preferredStyle: .alert)
             
             alert.addAction(UIAlertAction(title: "OK", style: .default))
             
             present(alert, animated: true)
         } else {
-            flashcardController.updateFlashcard(question: qText!, answer: aText!, extraAnswerOne: extraOne, extraAnswerTwo: extraTwo)
+            flashcardController.updateFlashcard(question: questionText!, answer: answerText!, extraAnswerOne: extraOne, extraAnswerTwo: extraTwo)
             dismiss(animated: true)
         }
     }

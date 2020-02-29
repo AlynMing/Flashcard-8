@@ -146,20 +146,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Choice #1" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tea-VF-pJG">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Extra Choice #1" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tea-VF-pJG">
                                 <rect key="frame" x="20" y="300" width="374" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Choice #2" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eOq-jv-Kfp">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Extra Choice #2" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eOq-jv-Kfp">
                                 <rect key="frame" x="20" y="342" width="374" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Choice #3" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vwH-ov-nW5">
-                                <rect key="frame" x="20" y="384" width="374" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -181,16 +175,15 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="aTextField" destination="Hry-HU-t1f" id="Ze7-aA-mLE"/>
-                        <outlet property="choiceOne" destination="tea-VF-pJG" id="ITO-69-Ffh"/>
-                        <outlet property="choiceThree" destination="vwH-ov-nW5" id="IHF-2P-zcS"/>
-                        <outlet property="choiceTwo" destination="eOq-jv-Kfp" id="JVJ-bK-ccG"/>
-                        <outlet property="qTextField" destination="ILX-zH-hdd" id="UCx-Xf-Wyz"/>
+                        <outlet property="answerTextField" destination="Hry-HU-t1f" id="pmf-K2-fJn"/>
+                        <outlet property="extraChoiceOne" destination="tea-VF-pJG" id="jeb-pm-BbA"/>
+                        <outlet property="extraChoiceTwo" destination="eOq-jv-Kfp" id="wrE-lC-0ix"/>
+                        <outlet property="questionTextField" destination="ILX-zH-hdd" id="Hij-Eb-Tzm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H6a-Sm-ycw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1791.304347826087" y="118.52678571428571"/>
+            <point key="canvasLocation" x="1622" y="119"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="P5c-HV-PVq">

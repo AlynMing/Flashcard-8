@@ -18,6 +18,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnOptionTwo: UIButton!
     @IBOutlet weak var btnOptionThree: UIButton!
     
+    var correctAnswer: Int? = 2
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -63,8 +65,12 @@ class ViewController: UIViewController {
         QuestionLabel.text = question;
         AnswerLabel.text = answer;
         
-        // randomly assign answer to choice
+        /*btnOptionOne.setTitle(extraAnswerOne, for: .normal)
+        btnOptionTwo.setTitle(answer, for: .normal)
+        btnOptionThree.setTitle(extraAnswerTwo, for: .normal)
+        */// randomly assign answer to choice
         let r = Int.random(in: 1 ... 3)
+        correctAnswer = r
         switch r {
         case 1:
             btnOptionOne.setTitle(answer, for: .normal)
@@ -100,9 +106,27 @@ class ViewController: UIViewController {
             creationController.initialQuestion = QuestionLabel.text
             creationController.initialAnswer = AnswerLabel.text
             
+            //creationController.choiceArr = []
+            switch correctAnswer {
+            case 1:
+                creationController.initialExtraOne = btnOptionTwo.currentTitle
+                creationController.initialExtraTwo = btnOptionThree.currentTitle
+            case 2:
+                creationController.initialExtraOne = btnOptionOne.currentTitle
+                creationController.initialExtraTwo = btnOptionThree.currentTitle
+            case 3:
+                creationController.initialExtraOne = btnOptionTwo.currentTitle
+                creationController.initialExtraTwo = btnOptionOne.currentTitle
+            default:
+                creationController.initialExtraTwo = "Err"
+            }
+            /*
             creationController.initialExtraOne = btnOptionOne.currentTitle
-            creationController.initialExtraTwo = btnOptionTwo.currentTitle
-            creationController.initialExtraThree = btnOptionThree.currentTitle
+            creationController.initialExtraThree =  btnOptionTwo.currentTitle
+            //creationController.initialExtraThree = btnOptionThree.currentTitle
+            //debug
+            creationController.initialExtraTwo = btnOptionThree.currentTitle
+            */
         }
     }
     
