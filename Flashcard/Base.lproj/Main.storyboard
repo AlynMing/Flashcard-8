@@ -35,6 +35,23 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1n-Zg-vfw">
+                                        <rect key="frame" x="231" y="215" width="39" height="43"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="✏️"/>
+                                        <connections>
+                                            <segue destination="avH-jF-Esg" kind="presentation" identifier="EditSegue" id="P2w-EF-QmD"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zet-LX-Jip">
+                                        <rect key="frame" x="0.0" y="-2" width="31" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="❌"/>
+                                        <connections>
+                                            <action selector="didTapOnDelete:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eSA-CH-VpG"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <gestureRecognizers/>
@@ -78,13 +95,22 @@
                                     <segue destination="avH-jF-Esg" kind="presentation" id="pdH-eI-Ury"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1n-Zg-vfw">
-                                <rect key="frame" x="308" y="414" width="36" height="51"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJi-Rh-0z2">
+                                <rect key="frame" x="349" y="813" width="46" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <state key="normal" title="✏️"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Next"/>
                                 <connections>
-                                    <segue destination="avH-jF-Esg" kind="presentation" identifier="EditSegue" id="P2w-EF-QmD"/>
+                                    <action selector="didTapOnNext:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9DD-xL-hE9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y0j-ft-eLL">
+                                <rect key="frame" x="20" y="813" width="63" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Prev"/>
+                                <connections>
+                                    <action selector="didTapOnPrev:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nEN-mS-aFF"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -100,6 +126,9 @@
                         <outlet property="btnOptionThree" destination="mzN-lH-fLp" id="yCh-hn-HWk"/>
                         <outlet property="btnOptionTwo" destination="HWB-t2-TFQ" id="Ne1-Xx-JvS"/>
                         <outlet property="card" destination="0jF-WA-GXB" id="Ax9-bA-J63"/>
+                        <outlet property="deleteButton" destination="zet-LX-Jip" id="khw-BT-sk0"/>
+                        <outlet property="nextButton" destination="UJi-Rh-0z2" id="Bnc-8h-yZZ"/>
+                        <outlet property="prevButton" destination="Y0j-ft-eLL" id="vyW-js-ZQN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

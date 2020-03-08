@@ -21,7 +21,8 @@ class CreationViewController: UIViewController {
     var initialAnswer: String?
     var initialExtraOne: String?
     var initialExtraTwo: String?
-    var initialExtraThree: String?
+    var initialFlashcard: Flashcard!
+    var isEditingFlashcard: Bool! = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +45,6 @@ class CreationViewController: UIViewController {
         
         let extraOne = extraChoiceOne.text
         let extraTwo = extraChoiceTwo.text
-        //let extraThree = choiceThree.text
         
         if (questionText == "" || answerText == "") {
             let alert = UIAlertController(title: "Missing text", message: "You need to enter both a question and an answer", preferredStyle: .alert)
@@ -53,7 +53,17 @@ class CreationViewController: UIViewController {
             
             present(alert, animated: true)
         } else {
-            flashcardController.updateFlashcard(question: questionText!, answer: answerText!, extraAnswerOne: extraOne, extraAnswerTwo: extraTwo)
+            if isEditingFlashcard {
+                isEditingFlashcard = false
+                initialFlashcard.question = questionText!
+                initialFlashcard.answer = answerText!
+                initialFlashcard.extraAnswerOne = extraOne
+                initialFlashcard.extraAnswerTwo = extraTwo
+                
+                flashcardController.updateFlashcard(flashcard: initialFlashcard)
+            } else {
+                flashcardController.updateFlashcard(question: questionText!, answer: answerText!, extraAnswerOne: extraOne, extraAnswerTwo: extraTwo)
+            }
             dismiss(animated: true)
         }
     }
