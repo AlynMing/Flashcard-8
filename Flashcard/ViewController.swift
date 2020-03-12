@@ -41,7 +41,7 @@ class ViewController: UIViewController {
         // Confetti View
         
             confettiView = SAConfettiView(frame: self.view.bounds)
-            confettiView.type = .Confetti
+            confettiView.type = .Diamond
             view.addSubview(confettiView)
             self.view.sendSubviewToBack(confettiView)
             confettiView.intensity = 0.8
@@ -239,11 +239,13 @@ class ViewController: UIViewController {
     }
     
     @IBAction func didTapOnFlashcard(_ sender: Any) {
+        if (confettiView.isActive()) {
+            confettiView.stopConfetti()
+        }
         if (AnswerLabel.isHidden) {
             QuestionLabel.isHidden = true;
             AnswerLabel.isHidden = false;
         } else if (QuestionLabel.isHidden){
-            confettiView.stopConfetti()
             AnswerLabel.isHidden = true;
             QuestionLabel.isHidden = false;
             btnOptionOne.isHidden = false;
@@ -254,7 +256,9 @@ class ViewController: UIViewController {
     
     @IBAction func didTapOptionOne(_ sender: Any) {
         if btnOptionOne.currentTitle == AnswerLabel!.text {
-            //confettiView.startConfetti()
+            if !confettiView.isActive() {
+                confettiView.startConfetti()
+            }
             AnswerLabel.isHidden = false;
             QuestionLabel.isHidden = true;
         } else {
@@ -264,7 +268,9 @@ class ViewController: UIViewController {
     
     @IBAction func didTapOptionTwo(_ sender: Any) {
         if btnOptionTwo.currentTitle == AnswerLabel!.text {
-            confettiView.startConfetti()
+            if !confettiView.isActive() {
+                confettiView.startConfetti()
+            }
             AnswerLabel.isHidden = false;
             QuestionLabel.isHidden = true;
         } else {
@@ -274,7 +280,9 @@ class ViewController: UIViewController {
     
     @IBAction func didTapOptionThree(_ sender: Any) {
         if btnOptionThree.currentTitle == AnswerLabel!.text {
-            confettiView.startConfetti()
+            if !confettiView.isActive() {
+                confettiView.startConfetti()
+            }
             AnswerLabel.isHidden = false;
             QuestionLabel.isHidden = true;
         } else {
