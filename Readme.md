@@ -7,7 +7,7 @@ Added UX functionalities and assets which made the app more exciting and enjoyab
 
 ### App Walk-though
 
-<img src="YOUR_GIF_URL_HERE" width=200><br>
+<img src="https://media.giphy.com/media/kFNqawaLrao1O9k6qn/giphy.gif" width=200><br>
 
 ## Required
 - [x] User should see the app icon 
