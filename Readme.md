@@ -9,8 +9,6 @@ Added UX functionalities and assets which made the app more exciting and enjoyab
 
 <img src="YOUR_GIF_URL_HERE" width=200><br>
 
-`TODO://` In the User stories section below, add an `x` between the `-[ ]` like this `- [x]` for any user story you complete. (☝️ Remove this paragraph after after checking off user stories)
-
 ## Required
 - [x] User should see the app icon 
 - [x] User should see a splash screen
