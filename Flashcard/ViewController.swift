@@ -29,22 +29,25 @@ class ViewController: UIViewController {
     @IBOutlet weak var prevButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
+    @IBOutlet weak var CardCounterLabel: UILabel!
     
     var correctAnswerPosition: Int? = 2
     var confettiView: SAConfettiView!
     
     var flashcards = [Flashcard]()
     var currentIndex = 0
+    var currentCardNumber = 0
+    var totalNumberOfCards = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Confetti View
         
-            confettiView = SAConfettiView(frame: self.view.bounds)
-            confettiView.type = .Diamond
-            view.addSubview(confettiView)
-            self.view.sendSubviewToBack(confettiView)
-            confettiView.intensity = 0.8
+        confettiView = SAConfettiView(frame: self.view.bounds)
+        confettiView.type = .Diamond
+        view.addSubview(confettiView)
+        self.view.sendSubviewToBack(confettiView)
+        confettiView.intensity = 0.8
         
         // Do any additional setup after loading the view.
         // Setting up the default flashcard
@@ -96,6 +99,10 @@ class ViewController: UIViewController {
         updateNextPrevButtons()
         QuestionLabel.text = flashcard.question;
         AnswerLabel.text = flashcard.answer;
+        
+        totalNumberOfCards = flashcards.count
+        currentCardNumber = currentIndex + 1
+        CardCounterLabel.text = String(currentCardNumber) + " of " + String(totalNumberOfCards);
         
         // randomly assign answer to choice
         correctAnswerPosition = Int.random(in: 1 ... 3)
@@ -225,33 +232,85 @@ class ViewController: UIViewController {
     }
     
     @IBAction func didTapOnNext(_ sender: Any) {
-        // Increase index count
-        currentIndex = currentIndex + 1
-        // Update the labels
-        updateFlashcard(flashcard: flashcards[currentIndex])
+        animateCardOut()
+        
     }
     
     @IBAction func didTapOnPrev(_ sender: Any) {
-        // Increase index count
-        currentIndex = currentIndex - 1
-        // Update the labels
-        updateFlashcard(flashcard: flashcards[currentIndex])
+        animateCardOutReverse()
+//        animateCardIn()
+//        // Increase index count
+//        currentIndex = currentIndex - 1
+//        // Update the labels
+//        updateFlashcard(flashcard: flashcards[currentIndex])
+    }
+    
+    func animateCardOut() {
+        UIView.animate(withDuration: 0.3,
+                       animations: {
+                            self.card.transform = CGAffineTransform.identity.translatedBy(x: -350.0, y: 0.0)
+                       }, completion: { finished in
+                            // Increase index count
+                            self.currentIndex = self.currentIndex + 1
+                            // Update the labels
+                            self.updateFlashcard(flashcard: self.flashcards[self.currentIndex])
+                            // Run other animation
+                            self.animateCardIn()
+                        })
+    }
+    
+    func animateCardIn() {
+        card.transform = CGAffineTransform.identity.translatedBy(x: 350, y: 0)
+        UIView.animate(withDuration: 0.3) {
+            self.card.transform = CGAffineTransform.identity
+        }
+    }
+    
+    func animateCardOutReverse() {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.card.transform = CGAffineTransform.identity.translatedBy(x: 350, y: 0)
+        }, completion: { finished in
+            // Decrease index count
+            self.currentIndex = self.currentIndex - 1
+            // Update the labels
+            self.updateFlashcard(flashcard: self.flashcards[self.currentIndex])
+            // Run other animation
+            self.animateCardInReverse()
+        })
+    }
+    
+    func animateCardInReverse() {
+        card.transform = CGAffineTransform.identity.translatedBy(x: -350, y: 0)
+        UIView.animate(withDuration: 0.3) {
+            self.card.transform = CGAffineTransform.identity
+        }
     }
     
     @IBAction func didTapOnFlashcard(_ sender: Any) {
+        flipFlashcard()
         if (confettiView.isActive()) {
             confettiView.stopConfetti()
         }
-        if (AnswerLabel.isHidden) {
-            QuestionLabel.isHidden = true;
-            AnswerLabel.isHidden = false;
-        } else if (QuestionLabel.isHidden){
-            AnswerLabel.isHidden = true;
-            QuestionLabel.isHidden = false;
-            btnOptionOne.isHidden = false;
-            btnOptionTwo.isHidden = false;
-            btnOptionThree.isHidden = false;
-        }
+    }
+    
+    func flipFlashcard() {
+        UIView.transition(with: card,
+                          duration: 0.3,
+                          options: .transitionFlipFromRight,
+                          animations: {
+                            if (self.AnswerLabel.isHidden) {
+                                self.QuestionLabel.isHidden = true;
+                                self.AnswerLabel.isHidden = false;
+                            } else if (self.QuestionLabel.isHidden){
+                                self.AnswerLabel.isHidden = true;
+                                self.QuestionLabel.isHidden = false;
+                                self.btnOptionOne.isHidden = false;
+                                self.btnOptionTwo.isHidden = false;
+                                self.btnOptionThree.isHidden = false;
+                            }
+                          })
+
+        
     }
     
     @IBAction func didTapOptionOne(_ sender: Any) {
@@ -259,8 +318,7 @@ class ViewController: UIViewController {
             if !confettiView.isActive() {
                 confettiView.startConfetti()
             }
-            AnswerLabel.isHidden = false;
-            QuestionLabel.isHidden = true;
+            flipFlashcard()
         } else {
             btnOptionOne.isHidden = true;
         }
@@ -271,8 +329,7 @@ class ViewController: UIViewController {
             if !confettiView.isActive() {
                 confettiView.startConfetti()
             }
-            AnswerLabel.isHidden = false;
-            QuestionLabel.isHidden = true;
+            flipFlashcard()
         } else {
             btnOptionTwo.isHidden = true;
         }
@@ -283,8 +340,7 @@ class ViewController: UIViewController {
             if !confettiView.isActive() {
                 confettiView.startConfetti()
             }
-            AnswerLabel.isHidden = false;
-            QuestionLabel.isHidden = true;
+            flipFlashcard()
         } else {
             btnOptionThree.isHidden = true;
         }
