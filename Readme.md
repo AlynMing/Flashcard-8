@@ -5,7 +5,7 @@
 ### App Description
 Added UX functionalities and assets which made the app more exciting and enjoyable.
 
-### App Walk-though
+### App Walk-through
 
 <img src="https://media.giphy.com/media/kFNqawaLrao1O9k6qn/giphy.gif" width=200><br>
 
@@ -26,7 +26,7 @@ Added UX functionalities and assets which made the app more exciting and enjoyab
 ### App Description
 The added functionalities allow users to create as many flashcards as they want, browse through them, store and retrieve them.
 
-### App Walk-though
+### App Walk-through
 
 <img src="https://media.giphy.com/media/VgZ5u0deAiijofOKxU/giphy.gif" width=200><br>
 
@@ -44,7 +44,7 @@ The added functionalities allow users to create as many flashcards as they want,
 ### App Description
 The Flashcard app added functionalities to edit existing question and answers and creating a new question from scratch on a separate screen.
 
-### App Walk-though
+### App Walk-through
 
 <img src="https://media.giphy.com/media/Uu0FFZdSrj4b4YV4XW/giphy.gif" width=200><br>
 
@@ -63,7 +63,7 @@ The Flashcard app added functionalities to edit existing question and answers an
 ### App Description
 The Flashcard app is a study app which opens with a question on a question card and when the question card is tapped it will flip it to the answer. In addition, it also provides three choices with one correct answer that can be used to practice.
 
-### App Walk-though
+### App Walk-through
 <img src="https://media.giphy.com/media/ZcXBJZR7SM0RQ9yh5x/giphy.gif" width=200><br>
 
 ## Required
